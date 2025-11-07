@@ -52,5 +52,15 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
             fontWeight = FontWeight.Bold
         )
     }
+    Spacer(modifier = Modifier.height(16.dp))
+
+    Card(
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
+            .shadow(6.dp, RoundedCornerShape(20.dp)),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(Color.White)
+    ) {
 
 
