@@ -33,3 +33,15 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
             .fillMaxSize()
             .background(Color(0xFFF6F2FF))
     ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(Color(0xFFB388FF), Color(0xFF9575CD))
+                    )
+                ),
+            contentAlignment = Alignment.Center
+
+    }
