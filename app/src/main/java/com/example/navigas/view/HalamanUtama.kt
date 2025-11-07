@@ -30,3 +30,10 @@ fun HalamanUtama(navController: NavController) {
             color = Color(0xFF800080),
             fontWeight = FontWeight.Bold
         )
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Image(
+            painter = painterResource(id = R.drawable.logo),
+            contentDescription = "Logo",
+            modifier = Modifier.size(200.dp)
+        )
