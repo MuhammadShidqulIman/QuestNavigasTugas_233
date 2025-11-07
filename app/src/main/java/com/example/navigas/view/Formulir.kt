@@ -21,6 +21,7 @@ data class Formulir(
     val status: String,
     val alamat: String
 )
+
 @Composable
 fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
     var nama by remember { mutableStateOf("") }
@@ -43,107 +44,100 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                     )
                 ),
             contentAlignment = Alignment.Center
-    }
-    ) {
-        Text(
-            text = "Formulir Pendaftaran",
-            color = Color.White,
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold
-        )
-    }
-    Spacer(modifier = Modifier.height(16.dp))
-
-    Card(
-        modifier = Modifier
-            .padding(16.dp)
-            .fillMaxWidth()
-            .shadow(6.dp, RoundedCornerShape(20.dp)),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(Color.White)
-    ) {
-        Column(
-            modifier = Modifier
-                .padding(20.dp)
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            Text("NAMA LENGKAP", fontWeight = FontWeight.Bold, fontSize = 14.sp)
-            OutlinedTextField(
-                value = nama,
-                onValueChange = { nama = it },
-                placeholder = { Text("Isian nama lengkap") },
-                modifier = Modifier.fillMaxWidth()
+            Text(
+                text = "Formulir Pendaftaran",
+                color = Color.White,
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold
             )
-            Text("JENIS KELAMIN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
-            Column {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    RadioButton(selected = kelamin == "Laki-laki", onClick = { kelamin = "Laki-laki" })
-                    Text("Laki-laki")
-                }
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    RadioButton(selected = kelamin == "Perempuan", onClick = { kelamin = "Perempuan" })
-                    Text("Perempuan")
-                }
-            }
-            Text("STATUS PERKAWINAN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
-            Column {
-                listOf("Janda", "Lajang", "Duda").forEach {
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Card(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+                .shadow(6.dp, RoundedCornerShape(20.dp)),
+            shape = RoundedCornerShape(20.dp),
+            colors = CardDefaults.cardColors(Color.White)
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                Text("NAMA LENGKAP", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                OutlinedTextField(
+                    value = nama,
+                    onValueChange = { nama = it },
+                    placeholder = { Text("Isian nama lengkap") },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Text("JENIS KELAMIN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                Column {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        RadioButton(selected = status == it, onClick = { status = it })
-                        Text(it)
+                        RadioButton(selected = kelamin == "Laki-laki", onClick = { kelamin = "Laki-laki" })
+                        Text("Laki-laki")
+                    }
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(selected = kelamin == "Perempuan", onClick = { kelamin = "Perempuan" })
+                        Text("Perempuan")
                     }
                 }
-            }
-            Text("ALAMAT", fontWeight = FontWeight.Bold, fontSize = 14.sp)
-            OutlinedTextField(
-                value = alamat,
-                onValueChange = { alamat = it },
-                placeholder = { Text("Alamat") },
-                modifier = Modifier.fillMaxWidth()
-            )
+                Text("STATUS PERKAWINAN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                Column {
+                    listOf("Janda", "Lajang", "Duda").forEach {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            RadioButton(selected = status == it, onClick = { status = it })
+                            Text(it)
+                        }
+                    }
+                }
 
-            Spacer(modifier = Modifier.height(10.dp))
-            Button(
-                onClick = {
-                    val peserta = Peserta(nama, kelamin, status, alamat)
-                    onSubmit(peserta)
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                contentPadding = PaddingValues(),
-                shape = RoundedCornerShape(12.dp)
-            ) {
+                Text("ALAMAT", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    placeholder = { Text("Alamat") },
+                    modifier = Modifier.fillMaxWidth()
+                )
 
-                Box(
+                Spacer(modifier = Modifier.height(10.dp))
+                Button(
+                    onClick = {
+                        val peserta = Peserta(nama, kelamin, status, alamat)
+                        onSubmit(peserta)
+                    },
                     modifier = Modifier
-                        .fillMaxSize()
-                        .background(
-                            Brush.horizontalGradient(
-                                listOf(Color(0xFF7E57C2), Color(0xFF6200EE))
-                            ),
-                            shape = RoundedCornerShape(12.dp)
-                        ),
-                    contentAlignment = Alignment.Center
+                        .fillMaxWidth()
+                        .height(48.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    contentPadding = PaddingValues(),
+                    shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text(
-                        "Submit",
-                        color = Color.White,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
-                    )
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(
+                                Brush.horizontalGradient(
+                                    listOf(Color(0xFF7E57C2), Color(0xFF6200EE))
+                                ),
+                                shape = RoundedCornerShape(12.dp)
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            "Submit",
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 }
             }
         }
     }
 }
-
-
-
-
-
-
-
-
