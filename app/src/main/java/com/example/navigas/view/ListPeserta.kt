@@ -111,3 +111,26 @@ fun ListPeserta(navController: NavController, pesertaList: List<Peserta>) {
                 }
             }
         }
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Button(
+            onClick = { navController.navigate("halaman_utama") },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF9C27B0)),
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Beranda", color = Color.White)
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(
+            onClick = { navController.navigate("formulir") },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFBA68C8)),
+            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Formulir Pendaftaran", color = Color.White)
+        }
+    }
+}
