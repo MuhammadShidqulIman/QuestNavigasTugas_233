@@ -95,6 +95,28 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                     }
                 }
             }
+            Text("ALAMAT", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+            OutlinedTextField(
+                value = alamat,
+                onValueChange = { alamat = it },
+                placeholder = { Text("Alamat") },
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+            Button(
+                onClick = {
+                    val peserta = Peserta(nama, kelamin, status, alamat)
+                    onSubmit(peserta)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                contentPadding = PaddingValues(),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+
 
 
 
