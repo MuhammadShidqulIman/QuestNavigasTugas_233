@@ -75,5 +75,17 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                 placeholder = { Text("Isian nama lengkap") },
                 modifier = Modifier.fillMaxWidth()
             )
+            Text("JENIS KELAMIN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+            Column {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(selected = kelamin == "Laki-laki", onClick = { kelamin = "Laki-laki" })
+                    Text("Laki-laki")
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(selected = kelamin == "Perempuan", onClick = { kelamin = "Perempuan" })
+                    Text("Perempuan")
+                }
+            }
+
 
 
