@@ -37,3 +37,17 @@ fun HalamanUtama(navController: NavController) {
             contentDescription = "Logo",
             modifier = Modifier.size(200.dp)
         )
+        spacer(modifier = Modifier.height(20.dp))
+
+        Text(
+            "Muhammad Shidqul Iman",
+            fontSize = 20.sp,
+            color = Color(0xFF6A1B9A),
+            fontWeight = FontWeight.Medium
+        )
+
+        Text(
+            "20230140233",
+            fontSize = 16.sp,
+            color = Color.DarkGray
+        )
