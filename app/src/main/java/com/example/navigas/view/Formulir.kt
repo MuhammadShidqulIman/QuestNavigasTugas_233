@@ -86,6 +86,16 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                     Text("Perempuan")
                 }
             }
+            Text("STATUS PERKAWINAN", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+            Column {
+                listOf("Janda", "Lajang", "Duda").forEach {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(selected = status == it, onClick = { status = it })
+                        Text(it)
+                    }
+                }
+            }
+
 
 
 
