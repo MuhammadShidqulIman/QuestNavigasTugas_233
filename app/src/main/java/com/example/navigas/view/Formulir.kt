@@ -62,5 +62,18 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(Color.White)
     ) {
+        Column(
+            modifier = Modifier
+                .padding(20.dp)
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(14.dp)
+        ) {
+            Text("NAMA LENGKAP", fontWeight = FontWeight.Bold, fontSize = 14.sp)
+            OutlinedTextField(
+                value = nama,
+                onValueChange = { nama = it },
+                placeholder = { Text("Isian nama lengkap") },
+                modifier = Modifier.fillMaxWidth()
+            )
 
 
