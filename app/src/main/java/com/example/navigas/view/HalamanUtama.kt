@@ -51,3 +51,19 @@ fun HalamanUtama(navController: NavController) {
             fontSize = 16.sp,
             color = Color.DarkGray
         )
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Button(
+            onClick = { navController.navigate("list_peserta") },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF7B1FA2)),
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier
+                .fillMaxWidth(0.7f)
+                .height(50.dp)
+        ) {
+            Text("Submit", color = Color.White, fontSize = 18.sp)
+        }
+    }
+}
+
+
