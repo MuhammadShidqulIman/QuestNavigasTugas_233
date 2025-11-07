@@ -37,7 +37,7 @@ fun HalamanUtama(navController: NavController) {
             contentDescription = "Logo",
             modifier = Modifier.size(200.dp)
         )
-        spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Text(
             "Muhammad Shidqul Iman",
