@@ -117,6 +117,32 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                 shape = RoundedCornerShape(12.dp)
             ) {
 
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            Brush.horizontalGradient(
+                                listOf(Color(0xFF7E57C2), Color(0xFF6200EE))
+                            ),
+                            shape = RoundedCornerShape(12.dp)
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "Submit",
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
+}
+
+
+
+
 
 
 
