@@ -43,5 +43,14 @@ fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
                     )
                 ),
             contentAlignment = Alignment.Center
-
     }
+    ) {
+        Text(
+            text = "Formulir Pendaftaran",
+            color = Color.White,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+
+
