@@ -21,3 +21,15 @@ data class Formulir(
     val status: String,
     val alamat: String
 )
+@Composable
+fun Formulir(navController: NavController, onSubmit: (Peserta) -> Unit) {
+    var nama by remember { mutableStateOf("") }
+    var kelamin by remember { mutableStateOf("") }
+    var status by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF6F2FF))
+    ) {
